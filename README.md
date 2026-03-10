@@ -55,3 +55,30 @@ git checkout -- <nama-file>: Membatalkan perubahan pada file yang belum di-stage
 git reset HEAD <nama-file>: Mengeluarkan file dari staging area (unstage).
 
 git reset --hard HEAD~1: Menghapus commit terakhir secara permanen (hati-hati!)
+
+
+# Step 1: Persiapan di Lokal (Laptop)
+Masuk ke folder project lo di terminal, lalu jalankan:
+
+git init (Bikin "buku catatan" Git di folder itu).
+
+git branch -M main (Pastiin nama branch utamanya main, bukan master, biar sinkron sama GitHub).
+
+git add . (Masukin semua file TypeScript/project lo ke "keranjang" siap angkut).
+
+git commit -m "feat: initial commit project TS" (Kasih label/catatan buat perubahan yang lo buat).
+
+# Step 2: Hubungkan ke "Langit" (GitHub)
+Lo harus kasih tahu Git lokal mau dikirim ke mana file-filenya.
+
+git remote add origin https://github.com/erick-surbakti/nyoba-git (Ngenalin alamat repo GitHub lo ke Git lokal).
+
+ # Step 3: Sinkronisasi (PENTING!)
+Seringkali di GitHub udah ada file (kayak README.md atau .gitignore bawaan saat bikin repo di web). Lo harus tarik dulu biar nggak bentrok.
+
+git pull origin main --rebase (Ambil file dari GitHub dan gabungin ke laptop lo dengan rapi).
+
+# Step 4: Final Push
+Kalo udah sinkron, baru deh lo "tembak" file-filenya ke GitHub.
+
+git push -u origin main (Kirim semua commit lo ke GitHub. Flag -u fungsinya biar ke depannya lo cukup ngetik git push doang).
